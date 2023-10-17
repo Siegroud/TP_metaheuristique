@@ -3,11 +3,11 @@ CC = gcc
 #CFLAGS = -Wall -Wextra -g
 TARGET = a.out
 
-SRCS = main.c
+SRCS = main.c filereading.c
 
 OBJS = $(SRCS:.c=.o)
 
-# HEADERS = headers.h
+HEADERS = headers.h
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)

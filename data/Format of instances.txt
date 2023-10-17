@@ -1,0 +1,5 @@
+n- number of nodes
+matrix n x n containing distance for each pair of nodes
+d_i for each node
+l_i for each node
+ 
