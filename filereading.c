@@ -9,6 +9,13 @@ void print_tab(int size, int **tab) {
     }
 }
 
+void print_list(int size, int *tab){
+    for (int i = 0 ; i < size ; i++){
+        printf("%d ", tab[i]);
+    }
+    printf("\n");
+}
+
 int read_from_file(char *string, int ***tab, int **demand, int **constraints) {
     FILE *f;
     char buffer[255];
@@ -30,6 +37,8 @@ int read_from_file(char *string, int ***tab, int **demand, int **constraints) {
 
     for (int i = 0; i < size; i++) {
         fscanf(f, "%d", &((*demand)[i]));
+        //Parcqu'on fait du recyclage
+        (*demand)[i] *= -1;
     }
 
     for (int i = 0; i < size; i++) {

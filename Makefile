@@ -3,7 +3,7 @@ CC = gcc
 #CFLAGS = -Wall -Wextra -g
 TARGET = a.out
 
-SRCS = main.c filereading.c
+SRCS = main.c filereading.c tsp.c
 
 OBJS = $(SRCS:.c=.o)
 
