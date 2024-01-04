@@ -15,7 +15,7 @@ int verif_sol (int **tab,int d,int a,int *etape,int nb_etape){// d=depart a=depo
             pos=etape[i];
         }
     }
-    if (d>sizeof(tab)){// si le depot existe pas
+    if (d>sizeof(tab)){// si le depot existe pa
         return 0;
     }
     if (tab[pos][a]<=0){ //si le deplacement de la position actuelle au depot est impossible
