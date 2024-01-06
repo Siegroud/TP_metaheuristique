@@ -1,6 +1,6 @@
 #include "filereading.h"
-#include "filereading.c"
-#include "verif_sol.c"
+#include "tsp.h"
+#include "verif_sol.h"
 #include "headers.h"
 
 
@@ -15,13 +15,6 @@ int main() {
     printf("%d\n", size);
     print_tab(size, tab);
 
-    int etape[4];
-    etape[0]=2;
-    etape[1]=3;
-    etape[2]=5;
-    etape[3]=5;
-
-    int test = verif_sol(tab, 0, 7, etape,4);
-    printf(" test verif : %d \n" ,test);
-
+    int depart = get_start(demand, size);
+    findPath(tab, size, depart,0,1,0,demand);
 }
