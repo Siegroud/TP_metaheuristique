@@ -1,22 +1,28 @@
-int verif_sol (int **tab,int d,int a,int *etape,int nb_etape){// d=depart a=depot
+int verif_sol (int **tab,int d,int a,int *etape,int nb_etape){// d=départ a=depôt
     int pos=d;//position actuelle
     int i=0;
 
-    for (i=0; i<nb_etape; i++){//tant qu'on a pas parcour tt les etape
-        if (etape[i]>sizeof(tab) || etape[i]<0){// si on ne connait pas ce port
+    // Tant que toutes les étapes n'ont pas été parcourues
+    for (i=0; i<nb_etape; i++){
+        // Si le port n'est pas connu
+        if (etape[i]>sizeof(tab) || etape[i]<0){
             return 0;
         }
-        else if (tab[pos][etape[i]]<=0){// si le deplacement de la position actuelle a la nouvelle etape est imposible
+            // Si le déplacement de la position actuelle à la nouvelle étape est impossible
+        else if (tab[pos][etape[i]]<=0){
             return 0;
         }
-        else {// sinon c possible donc on avance
+            // Si le déplacement est possible, on avance
+        else {
             pos=etape[i];
         }
     }
-    if (d>sizeof(tab)){// si le depot existe pa
+    // Si le dépôt n'existe pas
+    if (d>sizeof(tab)){
         return 0;
     }
-    if (tab[pos][a]<=0){ //si le deplacement de la position actuelle au depot est impossible
+    // Si le deplacement de la position actuelle au depôt est impossible
+    if (tab[pos][a]<=0){ 
         return 0;
     }
     return 1;
